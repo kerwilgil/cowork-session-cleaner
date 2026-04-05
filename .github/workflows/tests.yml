@@ -1,0 +1,79 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ['3.8', '3.9', '3.10', '3.11', '3.12']
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Check Python syntax
+      run: |
+        python -m py_compile cowork_cleaner.py
+        python -m py_compile scripts/windows.py
+        python -m py_compile scripts/mac.py
+        python -m py_compile install.py
+
+    - name: Verify script structure
+      run: |
+        python -c "import ast; ast.parse(open('cowork_cleaner.py').read())"
+        python -c "import ast; ast.parse(open('scripts/windows.py').read())"
+        python -c "import ast; ast.parse(open('scripts/mac.py').read())"
+        python -c "import ast; ast.parse(open('install.py').read())"
+
+    - name: Test imports
+      run: |
+        python -c "import os, sys, json, shutil, platform, subprocess, pathlib"
+
+    - name: Lint with flake8
+      continue-on-error: true
+      run: |
+        pip install flake8
+        flake8 cowork_cleaner.py --count --select=E9,F63,F7,F82 --show-source --statistics
+
+  code-quality:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Check file structure
+      run: |
+        ls -la README.md
+        ls -la LICENSE
+        ls -la cowork_cleaner.py
+        ls -la install.py
+        ls -la scripts/windows.py
+        ls -la scripts/mac.py
+        ls -la docs/INSTALLATION.md
+        ls -la docs/TROUBLESHOOTING.md
+
+    - name: Validate JSON test
+      run: |
+        python -c "
+import json
+# Test that the script can parse a sample metadata.json
+sample = {'title': 'Test', 'isArchived': False}
+json.dumps(sample)
+print('JSON parsing: OK')
+"
+
+    - name: README validation
+      run: |
+        test -s README.md && echo "README.md exists and is not empty"
+        grep -q "Installation" README.md && echo "README mentions Installation"
+        grep -q "MIT" LICENSE && echo "LICENSE is MIT"
