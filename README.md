@@ -101,14 +101,13 @@ Select: all
 ### Screenshots
 
 **Main Menu:**
-![Cowork Session Manager](docs/screenshots/menu-main.jpg)
+![Cowork Session Manager](https://raw.githubusercontent.com/kerwilgil/cowork-session-cleaner/main/docs/screenshots/menu-main.jpeg)
 
 **Selecting Sessions to Delete:**
-![Delete Selection](docs/screenshots/menu-delete-select.jpg)
+![Delete Selection](https://raw.githubusercontent.com/kerwilgil/cowork-session-cleaner/main/docs/screenshots/menu-delete-select.jpeg)
 
 **Confirmation & Result:**
-![Delete Confirmation](docs/screenshots/delete-confirmation.jpg)
-
+![Delete Confirmation](https://raw.githubusercontent.com/kerwilgil/cowork-session-cleaner/main/docs/screenshots/delete-confirmation.jpeg)
 ---
 
 ## For Advanced Users
@@ -300,13 +299,13 @@ Select: all
 ### Capturas de Pantalla
 
 **Menú Principal:**
-![Gestor de Sesiones Cowork](docs/screenshots/menu-main.jpg)
+![Gestor de Sesiones Cowork](https://raw.githubusercontent.com/kerwilgil/cowork-session-cleaner/main/docs/screenshots/menu-main.jpeg)
 
 **Seleccionando Sesiones para Eliminar:**
-![Selección de Eliminación](docs/screenshots/menu-delete-select.jpg)
+![Selección de Eliminación](https://raw.githubusercontent.com/kerwilgil/cowork-session-cleaner/main/docs/screenshots/menu-delete-select.jpeg)
 
 **Confirmación y Resultado:**
-![Confirmación de Eliminación](docs/screenshots/delete-confirmation.jpg)
+![Confirmación de Eliminación](https://raw.githubusercontent.com/kerwilgil/cowork-session-cleaner/main/docs/screenshots/delete-confirmation.jpeg)
 
 ---
 
