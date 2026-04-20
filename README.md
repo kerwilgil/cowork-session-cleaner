@@ -200,7 +200,7 @@ Claude stores Cowork sessions locally, but there's no built-in way to manage the
 - **Professional documentation in both languages**
 - **Zero dependencies** for maximum accessibility
 
-2026 Built with Windows and Spanish support in mind. By Kerwil Gil
+2026 Built with Windows and MacOS Spanish support in mind. By Kerwil Gil
 
 ---
 
@@ -383,4 +383,4 @@ Claude almacena sesiones de Cowork localmente, pero no hay forma incorporada de 
 - **Documentación profesional en ambos idiomas**
 - **Cero dependencias** para máxima accesibilidad
 
-2026 Construido pensando en soporte para Windows y español. Por Kerwil Gil
+2026 Construido pensando en soporte para Windows y MacOS español. Por Kerwil Gil
